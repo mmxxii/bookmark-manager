@@ -1,8 +1,7 @@
 .container {
   height: 100%;
-  padding: 150px;
+  padding: 150px 200px;
   background: linear-gradient(135deg, #05f, #09f);
-  // background: #09f;
 }
 
 .heading {
@@ -14,15 +13,17 @@
 .description {
   padding-top: 80px;
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 24px;
 }
 
 $bookmark-size: 120px;
 
 .bookmark {
-  fill: white;
-  height: $bookmark-size;
   width: $bookmark-size;
-  margin-left: -18px;
-  flex-shrink: 0;
+  height: $bookmark-size;
+  margin-left: -13px;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
 }
