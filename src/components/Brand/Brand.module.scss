@@ -1,13 +1,5 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
   padding: 16px;
-  background: linear-gradient(135deg, #05f, #09f);
-}
-
-.wrapper {
   width: 400px;
   margin: 0 auto;
 }
@@ -24,11 +16,11 @@
   font-size: 24px;
 }
 
-$bookmark-size: 120px;
+$icon-size: 120px;
 
 .bookmark {
-  width: $bookmark-size;
-  height: $bookmark-size;
+  width: $icon-size;
+  height: $icon-size;
   margin-left: -13px;
   stroke: #fff;
   stroke-width: 2;

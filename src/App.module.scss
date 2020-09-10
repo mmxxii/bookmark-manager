@@ -4,6 +4,19 @@
   background: #111;
 }
 
-.section {
+.sidebar,
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  overflow: hidden;
+}
+
+.sidebar {
+  background: linear-gradient(135deg, #05f, #09f);
+}
+
+.content {
   flex: 1;
 }

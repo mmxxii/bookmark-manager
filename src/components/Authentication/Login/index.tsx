@@ -3,8 +3,11 @@ import React from 'react';
 import styles from './Login.module.scss';
 
 import Input from '../../Input';
+import { useAuth } from '../../../contexts/auth';
 
 const Login: React.FC = () => {
+  const { login } = useAuth();
+
   return (
     <>
       <h2 className={styles.heading}>Welcome back!</h2>
@@ -14,7 +17,9 @@ const Login: React.FC = () => {
       <form className={styles.form}>
         <Input type="email" label="email" />
         <Input type="password" label="password" />
-        <button className={styles.button}>log in</button>
+        <button type="button" className={styles.button} onClick={login}>
+          log in
+        </button>
       </form>
     </>
   );
