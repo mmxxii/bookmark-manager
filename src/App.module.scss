@@ -6,17 +6,26 @@
 
 .sidebar,
 .content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   height: 100%;
   overflow: hidden;
 }
 
 .sidebar {
-  background: linear-gradient(135deg, #05f, #09f);
+  background-color: #181818;
+}
+
+.content,
+.brandWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .content {
   flex: 1;
+}
+
+.brandWrapper {
+  height: 100%;
+  background: linear-gradient(135deg, #05f, #09f);
 }

@@ -13,25 +13,19 @@ import Bookmarks from './components/Bookmarks';
 // const Bookmarks = React.lazy(() => import('./components/Bookmarks'));
 
 const sidebarVariants = {
-  start: { width: '55%' },
+  start: { width: '45%' },
   expanded: { width: '50%', transition: { type: 'spring' } },
   narrow: { width: 400, transition: { type: 'spring' } },
 };
 
 const brandVariants = {
-  initial: { opacity: 0, x: -200 },
-  animate: { opacity: 1, x: 0, transition: { type: 'spring' } },
-  exit: { opacity: 0, x: 300, transition: { type: 'spring' } },
+  animate: { opacity: 1 },
+  exit: { opacity: 0, transition: { type: 'spring' } },
 };
 
 const authenticationVariants = {
-  initial: { opacity: 0 },
-  animate: { opacity: 1, y: 0, transition: { type: 'spring' } },
-  exit: {
-    opacity: 0,
-    y: -100,
-    transition: { type: 'spring' },
-  },
+  animate: { opacity: 1 },
+  exit: { opacity: 0, transition: { type: 'spring' } },
 };
 
 const App: React.FC = () => {
@@ -49,10 +43,10 @@ const App: React.FC = () => {
           {!user && (
             <motion.div
               key="brand"
-              initial="initial"
               animate="animate"
               exit="exit"
               variants={brandVariants}
+              className={styles.brandWrapper}
             >
               <Brand />
             </motion.div>
@@ -65,7 +59,6 @@ const App: React.FC = () => {
           {!user && (
             <motion.div
               key="authentication"
-              initial="initial"
               animate="animate"
               exit="exit"
               variants={authenticationVariants}
