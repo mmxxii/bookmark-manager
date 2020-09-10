@@ -1,10 +1,17 @@
 import React, { useState, ChangeEvent } from 'react';
+import { motion } from 'framer-motion';
+
 import styles from './Input.module.scss';
 
 interface InputProps {
   type: 'email' | 'password';
   label: string;
 }
+
+const variants = {
+  small: { top: 0, fontSize: '14px', transition: { type: 'spring' } },
+  big: { top: 35, fontSize: '18px', transition: { type: 'spring' } },
+};
 
 const Input: React.FC<InputProps> = ({ type, label }) => {
   const [value, setValue] = useState<string | null>(null);
@@ -27,7 +34,14 @@ const Input: React.FC<InputProps> = ({ type, label }) => {
         onBlur={() => setFocus(false)}
         onChange={(event) => handleChange(event)}
       />
-      {label && <p className={labelClasses.join(' ')}>{label}</p>}
+      <motion.p
+        initial="big"
+        animate={value || focus ? 'small' : 'big'}
+        variants={variants}
+        className={labelClasses.join(' ')}
+      >
+        {label}
+      </motion.p>
     </div>
   );
 };

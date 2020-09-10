@@ -26,8 +26,12 @@ const brandVariants = {
 
 const authenticationVariants = {
   initial: { opacity: 0 },
-  animate: { opacity: 1, transition: { type: 'spring' } },
-  exit: { opacity: 0, transition: { type: 'spring' } },
+  animate: { opacity: 1, y: 0, transition: { type: 'spring' } },
+  exit: {
+    opacity: 0,
+    y: -100,
+    transition: { type: 'spring' },
+  },
 };
 
 const App: React.FC = () => {
@@ -41,9 +45,10 @@ const App: React.FC = () => {
         variants={sidebarVariants}
         className={styles.sidebar}
       >
-        <AnimatePresence>
+        <AnimatePresence exitBeforeEnter>
           {!user && (
             <motion.div
+              key="brand"
               initial="initial"
               animate="animate"
               exit="exit"
@@ -52,13 +57,14 @@ const App: React.FC = () => {
               <Brand />
             </motion.div>
           )}
+          {user && <BookmarkTree />}
         </AnimatePresence>
-        {user && <BookmarkTree />}
       </motion.div>
       <div className={styles.content}>
-        <AnimatePresence>
+        <AnimatePresence exitBeforeEnter>
           {!user && (
             <motion.div
+              key="authentication"
               initial="initial"
               animate="animate"
               exit="exit"
@@ -67,8 +73,8 @@ const App: React.FC = () => {
               <Authentication />
             </motion.div>
           )}
+          {user && <Bookmarks />}
         </AnimatePresence>
-        {user && <Bookmarks />}
       </div>
     </div>
   );

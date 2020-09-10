@@ -10,7 +10,8 @@
   outline: 0;
   background-color: transparent;
 
-  padding: 12px 0 16px;
+  padding: 8px 0 16px;
+  font-size: 18px;
   letter-spacing: 1px;
   border-bottom: 2px solid #333;
   transition: 0.1s;
@@ -25,20 +26,16 @@
 .input,
 .label {
   color: #aaa;
-  font-size: 18px;
   line-height: 27px;
   font-family: 'JetBrains Mono';
-  transition: 0.1s;
 }
 
 .label {
   position: absolute;
-  top: 39px;
   height: 27px;
+  transform-origin: left;
 }
 
 .activeLabel {
-  top: 0;
   color: #09f;
-  font-size: 14px;
 }

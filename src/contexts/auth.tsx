@@ -15,6 +15,7 @@ const AuthContext = React.createContext<IAuthContext>({});
 AuthContext.displayName = 'AuthContext';
 
 const AuthProvider: FC = (props) => {
+  // const [user, setUser] = useState<IUser | null>({ token: '' });
   const [user, setUser] = useState<IUser | null>(null);
 
   const login = useCallback(() => setUser({ token: '' }), []);
