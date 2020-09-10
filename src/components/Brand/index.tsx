@@ -3,25 +3,27 @@ import { motion } from 'framer-motion';
 import styles from './Brand.module.scss';
 
 const wrapperVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { type: 'tween', duration: 2, ease: 'easeInOut' },
-  },
+  hidden: { opacity: 0, x: -200 },
+  visible: { opacity: 1, x: 0, transition: { type: 'spring' } },
 };
 
 const pathVariants = {
   hidden: { pathLength: 0 },
   visible: {
     pathLength: 1,
-    transition: { type: 'tween', duration: 2, ease: 'easeInOut' },
+    transition: { type: 'tween', duration: 1, ease: 'linear' },
   },
 };
 
 const Brand: React.FC = () => {
   return (
     <div className={styles.container}>
-      <motion.div initial="hidden" animate="visible" variants={wrapperVariants}>
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={wrapperVariants}
+        className={styles.wrapper}
+      >
         <svg
           className={styles.bookmark}
           xmlns="http://www.w3.org/2000/svg"

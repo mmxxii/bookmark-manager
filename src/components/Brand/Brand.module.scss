@@ -1,7 +1,15 @@
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 100%;
-  padding: 150px 200px;
+  padding: 16px;
   background: linear-gradient(135deg, #05f, #09f);
+}
+
+.wrapper {
+  width: 400px;
+  margin: 0 auto;
 }
 
 .heading {

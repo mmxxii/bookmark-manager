@@ -1,0 +1,44 @@
+.wrapper {
+  position: relative;
+  padding: 27px 0;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+
+  padding: 12px 0 16px;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #333;
+  transition: 0.1s;
+
+  &:active,
+  &:focus {
+    border-bottom-color: #09f;
+    color: #fff;
+  }
+}
+
+.input,
+.label {
+  color: #aaa;
+  font-size: 18px;
+  line-height: 27px;
+  font-family: 'JetBrains Mono';
+  transition: 0.1s;
+}
+
+.label {
+  position: absolute;
+  top: 39px;
+  height: 27px;
+}
+
+.activeLabel {
+  top: 0;
+  color: #09f;
+  font-size: 14px;
+}
