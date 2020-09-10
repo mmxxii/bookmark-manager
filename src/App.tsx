@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import styles from './App.module.scss';
@@ -8,6 +8,7 @@ import Brand from './components/Brand';
 import Authentication from './components/Authentication';
 import BookmarkTree from './components/BookmarkTree';
 import Bookmarks from './components/Bookmarks';
+import { exitVariants } from './lib/motion-variants';
 
 // const BookmarkTree = React.lazy(() => import('./components/BookmarkTree'));
 // const Bookmarks = React.lazy(() => import('./components/Bookmarks'));
@@ -18,17 +19,7 @@ const sidebarVariants = {
   narrow: { width: 400, transition: { type: 'spring' } },
 };
 
-const brandVariants = {
-  animate: { opacity: 1 },
-  exit: { opacity: 0, transition: { type: 'spring' } },
-};
-
-const authenticationVariants = {
-  animate: { opacity: 1 },
-  exit: { opacity: 0, transition: { type: 'spring' } },
-};
-
-const App: React.FC = () => {
+const App: FC = () => {
   const { user } = useAuth();
 
   return (
@@ -45,7 +36,7 @@ const App: React.FC = () => {
               key="brand"
               animate="animate"
               exit="exit"
-              variants={brandVariants}
+              variants={exitVariants}
               className={styles.brandWrapper}
             >
               <Brand />
@@ -61,7 +52,7 @@ const App: React.FC = () => {
               key="authentication"
               animate="animate"
               exit="exit"
-              variants={authenticationVariants}
+              variants={exitVariants}
             >
               <Authentication />
             </motion.div>

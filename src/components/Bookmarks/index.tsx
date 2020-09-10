@@ -6,18 +6,8 @@ import styles from './Bookmarks.module.scss';
 import { mockBookmarks } from './mock-bookmarks';
 
 const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
+  hidden: { opacity: 0, x: 100 },
+  show: { opacity: 1, x: 0, transition: { type: 'spring', delay: 0.5 } },
 };
 
 const Bookmarks: FC = () => {
@@ -28,12 +18,12 @@ const Bookmarks: FC = () => {
       animate="show"
       className={styles.container}
     >
-      {mockBookmarks.map((bookmark, index) => (
-        <motion.div key={index} variants={item} className={styles.bookmark}>
+      {mockBookmarks.map((bookmark) => (
+        <div key={bookmark.id} className={styles.bookmark}>
           <a href={bookmark.url} target="_blank" rel="noopener noreferrer">
             {bookmark.name}
           </a>
-        </motion.div>
+        </div>
       ))}
     </motion.div>
   );
