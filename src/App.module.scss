@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  height: 100%;
+  background: #111;
+}
+
+.sidebar,
+.content {
+  height: 100%;
+  overflow: hidden;
+}
+
+.sidebar {
+  background-color: #181818;
+}
+
+.content,
+.brandWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.content {
+  flex: 1;
+}
+
+.brandWrapper {
+  height: 100%;
+  background: linear-gradient(135deg, #05f, #09f);
+}
