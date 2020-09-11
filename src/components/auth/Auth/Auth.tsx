@@ -9,7 +9,12 @@ import { Tabs, Tab } from '../../layout';
 
 const Authentication: FC = () => {
   return (
-    <motion.div animate="animate" exit="exit" variants={exitVariants}>
+    <motion.div
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      variants={exitVariants}
+    >
       <AnimateSharedLayout>
         <div className={styles.container}>
           <div className={styles.userIconWrapper}>

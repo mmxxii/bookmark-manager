@@ -8,6 +8,7 @@ import { exitVariants, svgPathVariants } from '../../../lib/motion-variants';
 const Brand: FC = () => {
   return (
     <motion.div
+      initial="initial"
       animate="animate"
       exit="exit"
       variants={exitVariants}
