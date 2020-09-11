@@ -7,7 +7,7 @@ interface IUser {
 interface IAuthContext {
   login?: () => void;
   logout?: () => void;
-  register?: () => void;
+  signup?: () => void;
   user?: IUser | null;
 }
 

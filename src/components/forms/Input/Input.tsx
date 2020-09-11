@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import styles from './Input.module.scss';
 
 interface InputProps {
-  type: 'email' | 'password';
+  type: 'text' | 'email' | 'password';
   label: string;
 }
 
