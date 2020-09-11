@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState, ChangeEvent, FC } from 'react';
 import { motion } from 'framer-motion';
 
 import styles from './Input.module.scss';
@@ -13,7 +13,7 @@ const variants = {
   big: { top: 35, fontSize: '18px', transition: { type: 'spring' } },
 };
 
-const Input: React.FC<InputProps> = ({ type, label }) => {
+const Input: FC<InputProps> = ({ type, label }) => {
   const [value, setValue] = useState<string | null>(null);
   const [focus, setFocus] = useState<boolean>(false);
 

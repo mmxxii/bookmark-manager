@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 import styles from './Bookmarks.module.scss';
 
-import { mockBookmarks } from './mock-bookmarks';
+import { mockBookmarks } from '../mock-bookmarks';
 
 const container = {
   hidden: { opacity: 0, x: 100 },
@@ -13,9 +13,9 @@ const container = {
 const Bookmarks: FC = () => {
   return (
     <motion.div
-      variants={container}
       initial="hidden"
       animate="show"
+      variants={container}
       className={styles.container}
     >
       {mockBookmarks.map((bookmark) => (
