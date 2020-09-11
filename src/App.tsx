@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { FC } from 'react';
+import { AnimatePresence } from 'framer-motion';
 
-function App() {
+import styles from './App.module.scss';
+
+import { useAuth } from './contexts';
+import { Brand, Sidebar } from './components/layout';
+import { Bookmarks, BookmarkTree } from './components/bookmarks';
+import { Auth } from './components/auth';
+
+const App: FC = () => {
+  const { user } = useAuth();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.container}>
+      <Sidebar>
+        <AnimatePresence exitBeforeEnter>
+          {user ? <BookmarkTree key="bookmark-tree" /> : <Brand key="brand" />}
+        </AnimatePresence>
+      </Sidebar>
+      <div className={styles.content}>
+        <AnimatePresence exitBeforeEnter>
+          {user ? <Bookmarks key="bookmarks" /> : <Auth key="auth" />}
+        </AnimatePresence>
+      </div>
     </div>
   );
-}
+};
 
 export default App;

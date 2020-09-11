@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  background: linear-gradient(135deg, #05f, #09f);
+}
+
+.wrapper {
+  padding: 16px;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.heading {
+  color: #fff;
+  font-size: 80px;
+  line-height: 1;
+}
+
+.description {
+  padding-top: 80px;
+  color: #fff;
+  font-size: 24px;
+}
+
+$icon-size: 120px;
+
+.bookmark {
+  width: $icon-size;
+  height: $icon-size;
+  margin-left: -13px;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}

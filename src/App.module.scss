@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  height: 100%;
+  background: #111;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+}
