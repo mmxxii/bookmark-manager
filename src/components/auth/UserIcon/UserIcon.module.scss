@@ -1,21 +1,17 @@
-$icon-wrapper-size: 100px;
-$icon-size: 50px;
+$icon-wrapper-size: 5rem;
 
-.iconWrapper {
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: $icon-wrapper-size;
   height: $icon-wrapper-size;
-  margin: 0 auto;
-  margin-bottom: 30px;
   border-radius: 50%;
   background: linear-gradient(135deg, rgb(255, 0, 136), rgb(221, 0, 238));
 }
 
 .icon {
-  width: $icon-size;
-  height: $icon-size;
+  width: 50%;
   stroke: #fff;
   stroke-width: 2;
   stroke-linejoin: round;

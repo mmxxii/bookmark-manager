@@ -6,6 +6,8 @@ import styles from './Input.module.scss';
 interface InputProps {
   type: 'text' | 'email' | 'password';
   label: string;
+  value: string | null;
+  onChange: (value: string) => void;
 }
 
 const variants = {
@@ -13,12 +15,11 @@ const variants = {
   big: { top: 35, fontSize: '18px', transition: { type: 'spring' } },
 };
 
-const Input: FC<InputProps> = ({ type, label }) => {
-  const [value, setValue] = useState<string | null>(null);
+const Input: FC<InputProps> = ({ type, label, value, onChange }) => {
   const [focus, setFocus] = useState<boolean>(false);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
+    onChange(event.target.value);
   };
 
   const labelClasses = [styles.label];

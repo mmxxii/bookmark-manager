@@ -1,25 +1,25 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { motion } from 'framer-motion';
 
-import styles from './AuthIcon.module.scss';
+import styles from './UserIcon.module.scss';
 import {
   svgCircleVariants,
   svgPathVariants,
 } from '../../../lib/motion-variants';
 
-const iconWrapperVariants = {
+const variants = {
   initial: { scale: 0.5 },
   animate: { scale: 1, transition: { type: 'spring' } },
 };
 
-const AuthIcon = () => {
+const UserIcon: FC = () => {
   return (
     <motion.div
       layout
       initial="initial"
       animate="animate"
-      variants={iconWrapperVariants}
-      className={styles.iconWrapper}
+      variants={variants}
+      className={styles.container}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -46,4 +46,4 @@ const AuthIcon = () => {
   );
 };
 
-export default AuthIcon;
+export default UserIcon;

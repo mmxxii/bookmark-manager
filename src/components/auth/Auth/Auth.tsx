@@ -4,7 +4,7 @@ import { motion, AnimateSharedLayout } from 'framer-motion';
 import styles from './Auth.module.scss';
 
 import { exitVariants } from '../../../lib/motion-variants';
-import { AuthIcon, Login, Signup } from '..';
+import { UserIcon, Login, Signup } from '..';
 import { Tabs, Tab } from '../../layout';
 
 const Authentication: FC = () => {
@@ -12,7 +12,9 @@ const Authentication: FC = () => {
     <motion.div animate="animate" exit="exit" variants={exitVariants}>
       <AnimateSharedLayout>
         <div className={styles.container}>
-          <AuthIcon />
+          <div className={styles.userIconWrapper}>
+            <UserIcon />
+          </div>
           <Tabs>
             <Tab label="Log In">
               <Login />

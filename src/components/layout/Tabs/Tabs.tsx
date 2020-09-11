@@ -23,7 +23,11 @@ const Tabs: FC<ITabsProps> = ({ children }) => {
     <>
       <motion.div layout className={styles.tabs}>
         {children.map(({ props: { label } }) => (
-          <div onClick={() => setActive(label)} className={styles.tabWrapper}>
+          <div
+            key={label}
+            onClick={() => setActive(label)}
+            className={styles.tabWrapper}
+          >
             <div className={styles.tab}>{label}</div>
             {active === label && (
               <motion.div
