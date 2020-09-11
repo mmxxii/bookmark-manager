@@ -3,15 +3,10 @@ import { AnimatePresence } from 'framer-motion';
 
 import styles from './App.module.scss';
 
-import { useAuth } from './contexts/auth';
-import Brand from './components/Brand';
-import Auth from './components/Auth';
-import BookmarkTree from './components/BookmarkTree';
-import Bookmarks from './components/Bookmarks';
-import Sidebar from './components/Sidebar';
-
-// const BookmarkTree = React.lazy(() => import('./components/BookmarkTree'));
-// const Bookmarks = React.lazy(() => import('./components/Bookmarks'));
+import { useAuth } from './contexts';
+import { Brand, Sidebar } from './components/layout';
+import { Bookmarks, BookmarkTree } from './components/bookmarks';
+import { Auth } from './components/auth';
 
 const App: FC = () => {
   const { user } = useAuth();

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 import styles from './Brand.module.scss';
 
-import { exitVariants, svgPathVariants } from '../../lib/motion-variants';
+import { exitVariants, svgPathVariants } from '../../../lib/motion-variants';
 
 const Brand: React.FC = () => {
   return (

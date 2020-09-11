@@ -3,12 +3,12 @@ import { motion } from 'framer-motion';
 
 import styles from './Auth.module.scss';
 
-import Login from './Login';
+import { Login } from '../';
 import {
-  svgPathVariants,
-  svgCircleVariants,
   exitVariants,
-} from '../../lib/motion-variants';
+  svgCircleVariants,
+  svgPathVariants,
+} from '../../../lib/motion-variants';
 
 const iconWrapperVariants = {
   initial: { scale: 0.5 },

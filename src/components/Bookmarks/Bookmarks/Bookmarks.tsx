@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 import styles from './Bookmarks.module.scss';
 
-import { mockBookmarks } from './mock-bookmarks';
+import { mockBookmarks } from '../mock-bookmarks';
 
 const container = {
   hidden: { opacity: 0, x: 100 },

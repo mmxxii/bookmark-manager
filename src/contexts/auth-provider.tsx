@@ -1,4 +1,4 @@
-import React, { FC, useState, useCallback, useMemo } from 'react';
+import React, { FC, useState, useCallback, useMemo, useContext } from 'react';
 
 interface IUser {
   token: string;
@@ -25,6 +25,6 @@ const AuthProvider: FC = (props) => {
   return <AuthContext.Provider value={value} {...props} />;
 };
 
-const useAuth = () => React.useContext(AuthContext);
+const useAuth = () => useContext(AuthContext);
 
 export { AuthProvider, useAuth };
