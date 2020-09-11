@@ -13,9 +13,9 @@ const container = {
 const Bookmarks: FC = () => {
   return (
     <motion.div
-      variants={container}
       initial="hidden"
       animate="show"
+      variants={container}
       className={styles.container}
     >
       {mockBookmarks.map((bookmark) => (

@@ -5,10 +5,9 @@ import styles from './App.module.scss';
 
 import { useAuth } from './contexts/auth';
 import Brand from './components/Brand';
-import Authentication from './components/Authentication';
+import Auth from './components/Auth';
 import BookmarkTree from './components/BookmarkTree';
 import Bookmarks from './components/Bookmarks';
-import { exitVariants } from './lib/motion-variants';
 
 // const BookmarkTree = React.lazy(() => import('./components/BookmarkTree'));
 // const Bookmarks = React.lazy(() => import('./components/Bookmarks'));
@@ -31,33 +30,12 @@ const App: FC = () => {
         className={styles.sidebar}
       >
         <AnimatePresence exitBeforeEnter>
-          {!user && (
-            <motion.div
-              key="brand"
-              animate="animate"
-              exit="exit"
-              variants={exitVariants}
-              className={styles.brandWrapper}
-            >
-              <Brand />
-            </motion.div>
-          )}
-          {user && <BookmarkTree />}
+          {user ? <BookmarkTree key="bookmark-tree" /> : <Brand key="brand" />}
         </AnimatePresence>
       </motion.div>
       <div className={styles.content}>
         <AnimatePresence exitBeforeEnter>
-          {!user && (
-            <motion.div
-              key="authentication"
-              animate="animate"
-              exit="exit"
-              variants={exitVariants}
-            >
-              <Authentication />
-            </motion.div>
-          )}
-          {user && <Bookmarks />}
+          {user ? <Bookmarks key="bookmarks" /> : <Auth key="auth" />}
         </AnimatePresence>
       </div>
     </div>
