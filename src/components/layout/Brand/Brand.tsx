@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { motion } from 'framer-motion';
 
 import styles from './Brand.module.scss';
 
 import { exitVariants, svgPathVariants } from '../../../lib/motion-variants';
 
-const Brand: React.FC = () => {
+const Brand: FC = () => {
   return (
     <motion.div
       animate="animate"

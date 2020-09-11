@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import styles from './Login.module.scss';
 
 import { useAuth } from '../../../contexts';
 import { Input } from '../../forms';
 
-const Login: React.FC = () => {
+const Login: FC = () => {
   const { login } = useAuth();
 
   return (

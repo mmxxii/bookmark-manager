@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { motion } from 'framer-motion';
 
 import styles from './Auth.module.scss';
@@ -15,7 +15,7 @@ const iconWrapperVariants = {
   animate: { scale: 1, transition: { type: 'spring' } },
 };
 
-const Authentication = () => {
+const Authentication: FC = () => {
   return (
     <motion.div animate="animate" exit="exit" variants={exitVariants}>
       <div className={styles.container}>
