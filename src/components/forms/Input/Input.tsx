@@ -1,47 +1,39 @@
-import React, { useState, ChangeEvent, FC } from 'react';
+import React, { FC, useState } from 'react';
 import { motion } from 'framer-motion';
 
 import styles from './Input.module.scss';
-
-interface InputProps {
-  type: 'text' | 'email' | 'password';
-  label: string;
-  value: string | null;
-  onChange: (value: string) => void;
-}
+import { FieldProps } from 'formik';
 
 const variants = {
   small: { top: 0, fontSize: '14px', transition: { type: 'spring' } },
   big: { top: 35, fontSize: '18px', transition: { type: 'spring' } },
 };
 
-const Input: FC<InputProps> = ({ type, label, value, onChange }) => {
-  const [focus, setFocus] = useState<boolean>(false);
+const Input: FC<FieldProps> = ({ field, form, ...props }) => {
+  const [focus, setFocus] = useState(false);
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    onChange(event.target.value);
+  const { value, name } = field;
+
+  const handleBlur = (e: React.FocusEvent<any>) => {
+    field.onBlur(e);
+    setFocus(false);
   };
-
-  const labelClasses = [styles.label];
-
-  if (value || focus) labelClasses.push(styles.activeLabel);
 
   return (
     <div className={styles.wrapper}>
       <input
-        type={type}
-        className={styles.input}
+        {...field}
+        {...props}
         onFocus={() => setFocus(true)}
-        onBlur={() => setFocus(false)}
-        onChange={(event) => handleChange(event)}
+        onBlur={handleBlur}
+        className={styles.input}
       />
       <motion.p
-        initial="big"
         animate={value || focus ? 'small' : 'big'}
         variants={variants}
-        className={labelClasses.join(' ')}
+        className={styles.label}
       >
-        {label}
+        {name}
       </motion.p>
     </div>
   );

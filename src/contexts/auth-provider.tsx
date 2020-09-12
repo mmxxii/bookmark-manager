@@ -9,13 +9,13 @@ import React, {
 import firebase from '../lib/firebase';
 
 interface IAuthContext {
-  logIn?: (email: string, password: string) => Promise<void>;
-  signUp?: (email: string, password: string) => Promise<void>;
-  signOut?: () => Promise<void>;
-  user?: firebase.User | null;
+  logIn: (email: string, password: string) => Promise<void>;
+  signUp: (email: string, password: string) => Promise<void>;
+  signOut: () => Promise<void>;
+  user: firebase.User | null;
 }
 
-const AuthContext = createContext<IAuthContext>({});
+const AuthContext = createContext<IAuthContext>(undefined!);
 AuthContext.displayName = 'AuthContext';
 
 const AuthProvider: FC = ({ children }) => {
