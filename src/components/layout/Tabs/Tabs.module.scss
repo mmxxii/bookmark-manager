@@ -1,0 +1,22 @@
+.tabs {
+  display: flex;
+  padding-bottom: 50px;
+}
+
+.tabWrapper {
+  flex: 1;
+  color: #fff;
+  font-family: 'JetBrains Mono';
+  cursor: pointer;
+}
+
+.tabBorder {
+  background: #09f;
+  height: 5px;
+  border-radius: 2px;
+}
+
+.tab {
+  padding: 1rem;
+  text-align: center;
+}

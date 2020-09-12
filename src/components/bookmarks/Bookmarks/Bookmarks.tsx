@@ -8,6 +8,7 @@ import { mockBookmarks } from '../mock-bookmarks';
 const container = {
   hidden: { opacity: 0, x: 100 },
   show: { opacity: 1, x: 0, transition: { type: 'spring', delay: 0.5 } },
+  exit: { opacity: 0, transition: { duration: 0.3 } },
 };
 
 const Bookmarks: FC = () => {
@@ -15,6 +16,7 @@ const Bookmarks: FC = () => {
     <motion.div
       initial="hidden"
       animate="show"
+      exit="exit"
       variants={container}
       className={styles.container}
     >

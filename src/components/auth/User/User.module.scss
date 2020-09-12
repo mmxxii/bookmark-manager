@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: #222;
+}
+
+.info {
+  padding-left: 1rem;
+}
+
+.email {
+  color: #888;
+  padding-bottom: 0.5rem;
+}
+
+.signOut {
+  color: #fff;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.email,
+.signOut {
+  font-size: 14px;
+  line-height: 1;
+  font-family: 'JetBrains Mono';
+}
