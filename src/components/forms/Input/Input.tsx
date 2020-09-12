@@ -9,7 +9,11 @@ const variants = {
   big: { top: 35, fontSize: '18px', transition: { type: 'spring' } },
 };
 
-const Input: FC<FieldProps> = ({ field, form, ...props }) => {
+const Input: FC<FieldProps> = ({
+  field,
+  form: { touched, errors },
+  ...props
+}) => {
   const [focus, setFocus] = useState(false);
 
   const { value, name } = field;
@@ -28,6 +32,7 @@ const Input: FC<FieldProps> = ({ field, form, ...props }) => {
         onBlur={handleBlur}
         className={styles.input}
       />
+      <div className={styles.error}>{touched[name] && errors[name]}</div>
       <motion.p
         animate={value || focus ? 'small' : 'big'}
         variants={variants}

@@ -1,10 +1,16 @@
 import React, { FC } from 'react';
 import { Field, Form, Formik } from 'formik';
+import * as Yup from 'yup';
 
 import styles from './Login.module.scss';
 
 import { useAuth } from '../../../contexts';
 import { Input } from '../../forms';
+
+const loginSchema = Yup.object().shape({
+  email: Yup.string().email('invalid email').required('required'),
+  password: Yup.string().min(8, 'too short').required('required'),
+});
 
 const Login: FC = () => {
   const { logIn } = useAuth();
@@ -14,6 +20,7 @@ const Login: FC = () => {
       <h2 className={styles.heading}>Welcome back!</h2>
       <Formik
         initialValues={{ email: '', password: '' }}
+        validationSchema={loginSchema}
         onSubmit={async ({ email, password }, { setSubmitting }) => {
           await logIn!(email, password);
           setSubmitting(false);
