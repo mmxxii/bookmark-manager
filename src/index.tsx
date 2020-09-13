@@ -5,6 +5,8 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { AppProviders } from './contexts';
 
+import './lib/font-awesome';
+
 ReactDOM.render(
   <React.StrictMode>
     <AppProviders>
