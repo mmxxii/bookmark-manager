@@ -1,3 +1,7 @@
+.container {
+  padding-bottom: 16px;
+}
+
 .input {
   display: block;
   width: 100%;
@@ -5,22 +9,27 @@
   outline: 0;
   background-color: transparent;
 
-  color: #aaa;
+  padding: 0 20px;
+  height: 48px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 48px;
+
   border-bottom: 2px solid #333;
+  background-color: rgba(255, 255, 255, 0.02);
+
+  &::placeholder {
+    color: #777;
+  }
 
   &:active,
   &:focus {
-    color: #fff;
     border-bottom-color: #09f;
   }
 }
 
 .input,
-.label,
 .error {
-  height: 3rem;
-  font-size: 1rem;
-  line-height: 3rem;
   font-family: 'JetBrains Mono';
 }
 
@@ -30,5 +39,8 @@
 }
 
 .error {
+  height: 32px;
   color: #f08;
+  font-size: 14px;
+  line-height: 32px;
 }

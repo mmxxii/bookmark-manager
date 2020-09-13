@@ -14,7 +14,7 @@ interface InputProps {
 
 const Input: FC<InputProps> = ({ inputRef, error, ...props }) => {
   return (
-    <>
+    <div className={styles.container}>
       <input
         {...props}
         ref={inputRef}
@@ -35,7 +35,7 @@ const Input: FC<InputProps> = ({ inputRef, error, ...props }) => {
           )}
         </AnimatePresence>
       </div>
-    </>
+    </div>
   );
 };
 
