@@ -15,7 +15,6 @@
     "@types/yup": "^0.29.7",
     "classnames": "^2.2.6",
     "firebase": "^7.20.0",
-    "formik": "^2.1.5",
     "framer-motion": "^2.6.10",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
