@@ -1,4 +1,4 @@
-$icon-wrapper-size: 5rem;
+$icon-wrapper-size: 4rem;
 
 .container {
   display: flex;
@@ -7,7 +7,7 @@ $icon-wrapper-size: 5rem;
   width: $icon-wrapper-size;
   height: $icon-wrapper-size;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgb(255, 0, 136), rgb(221, 0, 238));
+  background: linear-gradient(135deg, #f08, #d0e);
 }
 
 .icon {

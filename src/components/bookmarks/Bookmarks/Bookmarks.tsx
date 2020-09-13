@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import styles from './Bookmarks.module.scss';
 
 import { mockBookmarks } from '../mock-bookmarks';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const container = {
   hidden: { opacity: 0, x: 100 },
@@ -25,6 +26,10 @@ const Bookmarks: FC = () => {
           <a href={bookmark.url} target="_blank" rel="noopener noreferrer">
             {bookmark.name}
           </a>
+          <div className={styles.tools}>
+            <FontAwesomeIcon icon="pen" />
+            <FontAwesomeIcon icon="trash" />
+          </div>
         </div>
       ))}
     </motion.div>
