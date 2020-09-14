@@ -6,7 +6,7 @@ import * as yup from 'yup';
 import styles from './Login.module.scss';
 
 import { useAuth } from '../../../contexts';
-import { Input } from '../../forms';
+import { ErrorMessage, Input } from '../../forms';
 import { Button } from '../../layout';
 
 const schema = yup.object().shape({
@@ -45,15 +45,17 @@ const Login: FC = () => {
           type="email"
           placeholder="email"
           inputRef={register}
-          error={errors.email?.message}
+          invalid={!!errors.email?.message}
         />
+        <ErrorMessage>{errors.email?.message}</ErrorMessage>
         <Input
           name="password"
           type="password"
           placeholder="password"
           inputRef={register}
-          error={errors.password?.message}
+          invalid={!!errors.password?.message}
         />
+        <ErrorMessage>{errors.password?.message}</ErrorMessage>
         <Button type="submit" disabled={isSubmitting}>
           log in
         </Button>
