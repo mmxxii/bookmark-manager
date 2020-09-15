@@ -9,16 +9,28 @@ interface InputProps {
   placeholder: string;
   inputRef: any;
   invalid: boolean;
+  startAdornment?: JSX.Element;
 }
 
-const Input: FC<InputProps> = ({ inputRef, invalid, ...props }) => {
+const Input: FC<InputProps> = ({
+  inputRef,
+  invalid,
+  startAdornment,
+  ...props
+}) => {
   return (
-    <input
-      {...props}
-      ref={inputRef}
-      className={classNames(styles.input, { [styles.invalid]: invalid })}
-      autoComplete="off"
-    />
+    <div className={styles.container}>
+      <div className={classNames(styles.adornment, styles.startAdornment)}>
+        {startAdornment}
+      </div>
+      <input
+        {...props}
+        ref={inputRef}
+        className={classNames(styles.input, { [styles.invalid]: invalid })}
+        autoComplete="off"
+      />
+      <div className={styles.border}></div>
+    </div>
   );
 };
 

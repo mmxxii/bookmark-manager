@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers';
 import * as yup from 'yup';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import styles from './Login.module.scss';
 
@@ -28,7 +29,6 @@ const Login: FC = () => {
     formState: { isSubmitting },
     errors,
   } = useForm<LoginForm>({
-    mode: 'onTouched',
     resolver: yupResolver(schema),
   });
 
@@ -46,6 +46,7 @@ const Login: FC = () => {
           placeholder="email"
           inputRef={register}
           invalid={!!errors.email?.message}
+          startAdornment={<FontAwesomeIcon icon="envelope" />}
         />
         <ErrorMessage>{errors.email?.message}</ErrorMessage>
         <Input
@@ -54,6 +55,7 @@ const Login: FC = () => {
           placeholder="password"
           inputRef={register}
           invalid={!!errors.password?.message}
+          startAdornment={<FontAwesomeIcon icon="lock" />}
         />
         <ErrorMessage>{errors.password?.message}</ErrorMessage>
         <Button type="submit" disabled={isSubmitting}>
