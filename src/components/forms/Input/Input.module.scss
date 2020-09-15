@@ -1,3 +1,34 @@
+.container {
+  position: relative;
+  padding: 0 3rem 4px;
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.adornment {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  color: #777;
+}
+
+.startAdornment {
+  left: 0;
+}
+
+.border {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  background-color: #333;
+}
+
 .input {
   display: block;
   width: 100%;
@@ -5,30 +36,23 @@
   outline: 0;
   background-color: transparent;
 
-  color: #aaa;
-  border-bottom: 2px solid #333;
-
-  &:active,
-  &:focus {
-    color: #fff;
-    border-bottom-color: #09f;
-  }
-}
-
-.input,
-.label,
-.error {
-  height: 3rem;
-  font-size: 1rem;
-  line-height: 3rem;
+  color: #fff;
+  font-size: 16px;
+  line-height: 48px;
   font-family: 'JetBrains Mono';
+
+  &::placeholder {
+    color: #777;
+  }
+
+  &:focus + .border {
+    background-color: #09f;
+  }
 }
 
 .invalid,
 .invalid:focus {
-  border-bottom-color: #f08;
-}
-
-.error {
-  color: #f08;
+  & + .border {
+    background-color: #f08;
+  }
 }

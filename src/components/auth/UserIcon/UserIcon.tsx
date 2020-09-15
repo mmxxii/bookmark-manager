@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { motion } from 'framer-motion';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import styles from './UserIcon.module.scss';
 
@@ -10,7 +11,9 @@ const UserIcon: FC = () => {
       initial="initial"
       animate="animate"
       className={styles.container}
-    ></motion.div>
+    >
+      <FontAwesomeIcon icon="user" className={styles.icon} size="2x" />
+    </motion.div>
   );
 };
 

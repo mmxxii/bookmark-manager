@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
 import classNames from 'classnames';
 
 import styles from './Input.module.scss';
@@ -9,33 +8,29 @@ interface InputProps {
   type: string;
   placeholder: string;
   inputRef: any;
-  error: string | undefined;
+  invalid: boolean;
+  startAdornment?: JSX.Element;
 }
 
-const Input: FC<InputProps> = ({ inputRef, error, ...props }) => {
+const Input: FC<InputProps> = ({
+  inputRef,
+  invalid,
+  startAdornment,
+  ...props
+}) => {
   return (
-    <>
+    <div className={styles.container}>
+      <div className={classNames(styles.adornment, styles.startAdornment)}>
+        {startAdornment}
+      </div>
       <input
         {...props}
         ref={inputRef}
-        className={classNames(styles.input, { [styles.invalid]: error })}
+        className={classNames(styles.input, { [styles.invalid]: invalid })}
         autoComplete="off"
       />
-      <div className={styles.error}>
-        <AnimatePresence>
-          {error && (
-            <motion.div
-              initial={{ opacity: 0, x: -100 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 100 }}
-              transition={{ type: 'tween' }}
-            >
-              {error}
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    </>
+      <div className={styles.border}></div>
+    </div>
   );
 };
 
