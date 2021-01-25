@@ -1,0 +1,15 @@
+$icon-wrapper-size: 4rem;
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $icon-wrapper-size;
+  height: $icon-wrapper-size;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f08, #d0e);
+}
+
+.icon {
+  color: #fff;
+}

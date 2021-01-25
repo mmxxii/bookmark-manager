@@ -4,8 +4,8 @@ import { AnimatePresence } from 'framer-motion';
 import styles from './App.module.scss';
 
 import { useAuth } from './contexts';
-import { Brand, Sidebar } from './components/layout';
-import { Bookmarks, BookmarkTree } from './components/bookmarks';
+import { Brand, Sidebar, SidebarWrapper } from './components/layout';
+import { Bookmarks } from './components/bookmarks';
 import { Auth } from './components/auth';
 
 const App: FC = () => {
@@ -13,11 +13,11 @@ const App: FC = () => {
 
   return (
     <div className={styles.container}>
-      <Sidebar>
+      <SidebarWrapper>
         <AnimatePresence exitBeforeEnter>
-          {user ? <BookmarkTree key="bookmark-tree" /> : <Brand key="brand" />}
+          {user ? <Sidebar key="sidebar" /> : <Brand key="brand" />}
         </AnimatePresence>
-      </Sidebar>
+      </SidebarWrapper>
       <div className={styles.content}>
         <AnimatePresence exitBeforeEnter>
           {user ? <Bookmarks key="bookmarks" /> : <Auth key="auth" />}

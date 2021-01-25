@@ -1,6 +1,32 @@
-.wrapper {
+.container {
   position: relative;
-  padding: 27px 0;
+  padding: 0 3rem 4px;
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.adornment {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  color: #777;
+}
+
+.startAdornment {
+  left: 0;
+}
+
+.border {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  background-color: #333;
 }
 
 .input {
@@ -10,32 +36,23 @@
   outline: 0;
   background-color: transparent;
 
-  padding: 8px 0 16px;
-  font-size: 18px;
-  letter-spacing: 1px;
-  border-bottom: 2px solid #333;
-  transition: 0.1s;
+  color: #fff;
+  font-size: 16px;
+  line-height: 48px;
+  font-family: 'JetBrains Mono';
 
-  &:active,
-  &:focus {
-    border-bottom-color: #09f;
-    color: #fff;
+  &::placeholder {
+    color: #777;
+  }
+
+  &:focus + .border {
+    background-color: #09f;
   }
 }
 
-.input,
-.label {
-  color: #aaa;
-  line-height: 27px;
-  font-family: 'JetBrains Mono';
-}
-
-.label {
-  position: absolute;
-  height: 27px;
-  transform-origin: left;
-}
-
-.activeLabel {
-  color: #09f;
+.invalid,
+.invalid:focus {
+  & + .border {
+    background-color: #f08;
+  }
 }

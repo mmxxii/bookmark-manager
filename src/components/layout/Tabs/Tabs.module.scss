@@ -1,0 +1,25 @@
+.tabs {
+  display: flex;
+  padding-bottom: 50px;
+}
+
+.tabWrapper {
+  flex: 1;
+  color: #fff;
+  font-family: 'JetBrains Mono';
+  cursor: pointer;
+}
+
+.tabBorder {
+  height: 4px;
+  background: #09f;
+}
+
+.tab {
+  padding: 1rem;
+  text-align: center;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+  }
+}

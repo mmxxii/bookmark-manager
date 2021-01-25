@@ -1,33 +1,6 @@
-.button {
-  display: block;
-  border: 0;
-  outline: 0;
-
-  color: #fff;
-  font-size: 16px;
-  font-family: 'JetBrains Mono';
-  line-height: 1;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-
-  margin-left: auto;
-  padding: 16px 20px;
-  cursor: pointer;
-  background: #09f;
-}
-
 .heading {
+  padding-bottom: 2rem;
   color: #fff;
-  font-size: 40px;
-}
-
-.paragraph {
-  padding: 5px 0 60px;
-  color: #fff;
-  font-family: 'JetBrains Mono';
-
-  a {
-    color: #09f;
-    text-decoration: none;
-  }
+  font-size: 32px;
+  text-align: center;
 }

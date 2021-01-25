@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import styles from './Sidebar.module.scss';
 
 import { useAuth } from '../../../contexts';
+import { BookmarkTree } from '../../bookmarks';
+import { User } from '../../auth';
 
 const variants = {
   start: { width: '45%' },
@@ -11,7 +13,7 @@ const variants = {
   narrow: { width: 400, transition: { type: 'spring' } },
 };
 
-const Sidebar: FC = ({ children }) => {
+const SidebarWrapper: FC = ({ children }) => {
   const { user } = useAuth();
 
   return (
@@ -26,4 +28,13 @@ const Sidebar: FC = ({ children }) => {
   );
 };
 
-export default Sidebar;
+const Sidebar: FC = () => {
+  return (
+    <div className={styles.sidebar}>
+      <User />
+      <BookmarkTree />
+    </div>
+  );
+};
+
+export { SidebarWrapper, Sidebar };
